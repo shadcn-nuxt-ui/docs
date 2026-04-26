@@ -1,0 +1,31 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+.dmux/worktrees/task-response/.data
+.dmux/worktrees/task-request/.data
+.dmux/worktrees/task-15-3/.data
+.dmux/worktrees/task-15-5/.data
+.dmux/worktrees/task-17-1/.data
+.dmux/worktrees/task-17-3/.data

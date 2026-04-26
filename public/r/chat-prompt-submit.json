@@ -1,0 +1,23 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "chat-prompt-submit",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-vue-next"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "blocks/chat-prompt-submit/index.ts",
+      "content": "export { default as ChatPromptSubmit, type ChatPromptSubmitProps } from \"./ChatPromptSubmit.vue\";\n",
+      "type": "registry:block"
+    },
+    {
+      "path": "blocks/chat-prompt-submit/ChatPromptSubmit.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { HTMLAttributes } from \"vue\";\nimport { ArrowUp, RotateCcw, Square } from \"lucide-vue-next\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface ChatPromptSubmitProps {\n  /** Current chat status */\n  status?: \"ready\" | \"streaming\" | \"submitted\" | \"error\";\n  /** Disable the button */\n  disabled?: boolean;\n  /** Additional CSS classes */\n  class?: HTMLAttributes[\"class\"];\n}\n\nconst props = withDefaults(defineProps<ChatPromptSubmitProps>(), {\n  status: \"ready\",\n});\n\nconst emit = defineEmits<{\n  stop: [];\n  reload: [];\n}>();\n\nconst icon = computed(() => {\n  if (props.status === \"error\") return RotateCcw;\n  if (props.status === \"streaming\" || props.status === \"submitted\") return Square;\n  return ArrowUp;\n});\n\nconst isSubmit = computed(() => props.status === \"ready\");\n\nfunction onClick() {\n  if (props.status === \"error\") {\n    emit(\"reload\");\n  }\n  else if (props.status === \"streaming\" || props.status === \"submitted\") {\n    emit(\"stop\");\n  }\n}\n</script>\n\n<template>\n  <Button\n    data-slot=\"chat-prompt-submit\"\n    :type=\"isSubmit ? 'submit' : 'button'\"\n    variant=\"default\"\n    size=\"icon-sm\"\n    :disabled=\"disabled\"\n    :class=\"cn('size-7 rounded-md', props.class)\"\n    @click=\"!isSubmit && onClick()\"\n  >\n    <component\n      :is=\"icon\"\n      class=\"size-4\"\n    />\n  </Button>\n</template>\n",
+      "type": "registry:block"
+    }
+  ]
+}

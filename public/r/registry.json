@@ -1,0 +1,115 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry.json",
+  "name": "shadcn-nuxt-ui",
+  "homepage": "https://shadcn-nuxt-ui.stackhacker.io",
+  "items": [
+    {
+      "name": "lucide-icon",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "blocks/lucide-icon/index.ts",
+          "type": "registry:block"
+        },
+        {
+          "path": "blocks/lucide-icon/LucideIcon.vue",
+          "type": "registry:block"
+        }
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ]
+    },
+    {
+      "name": "hello-world",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "blocks/hello-world/index.ts",
+          "type": "registry:block"
+        },
+        {
+          "path": "blocks/hello-world/HelloWorld.vue",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chat-prompt-submit",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "blocks/chat-prompt-submit/index.ts",
+          "type": "registry:block"
+        },
+        {
+          "path": "blocks/chat-prompt-submit/ChatPromptSubmit.vue",
+          "type": "registry:block"
+        }
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "name": "chat-prompt",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "blocks/chat-prompt/index.ts",
+          "type": "registry:block"
+        },
+        {
+          "path": "blocks/chat-prompt/ChatPrompt.vue",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "chat-messages",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "blocks/chat-messages/index.ts",
+          "type": "registry:block"
+        },
+        {
+          "path": "blocks/chat-messages/ChatMessages.vue",
+          "type": "registry:block"
+        }
+      ],
+      "dependencies": [
+        "ai",
+        "lucide-vue-next"
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "name": "chat-message",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "blocks/chat-message/index.ts",
+          "type": "registry:block"
+        },
+        {
+          "path": "blocks/chat-message/ChatMessage.vue",
+          "type": "registry:block"
+        }
+      ],
+      "dependencies": [
+        "ai"
+      ],
+      "registryDependencies": [
+        "button",
+        "icon",
+        "tooltip"
+      ]
+    }
+  ]
+}

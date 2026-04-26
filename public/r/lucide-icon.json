@@ -1,0 +1,20 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "lucide-icon",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-vue-next"
+  ],
+  "files": [
+    {
+      "path": "blocks/lucide-icon/index.ts",
+      "content": "export { default as LucideIcon, type LucideIconProps } from \"./LucideIcon.vue\";\n",
+      "type": "registry:block"
+    },
+    {
+      "path": "blocks/lucide-icon/LucideIcon.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Component } from \"vue\";\nimport { icons } from \"lucide-vue-next\";\n\nexport interface LucideIconProps {\n  /** Icon identifier - accepts `i-lucide-*` style names or Vue components */\n  name: string | Component;\n  /** Icon dimensions */\n  size?: string | number;\n  class?: string;\n}\n\nconst props = defineProps<LucideIconProps>();\n\nconst iconStyle = computed(() => {\n  if (!props.size) return {};\n  const s = typeof props.size === \"number\" ? `${props.size}px` : props.size;\n  return { width: s, height: s };\n});\n\nconst isLucide = computed(() => {\n  if (typeof props.name !== \"string\") return false;\n  return props.name.startsWith(\"i-lucide-\");\n});\n\nconst resolvedComponent = computed(() => {\n  if (typeof props.name !== \"string\") {\n    return props.name;\n  }\n\n  if (!isLucide.value) return null;\n\n  const pascalName = props.name\n    .replace(/^i-lucide-/, \"\")\n    .split(\"-\")\n    .map(part => part.charAt(0).toUpperCase() + part.slice(1))\n    .join(\"\");\n\n  return icons[pascalName as keyof typeof icons] ?? null;\n});\n</script>\n\n<template>\n  <component\n    :is=\"resolvedComponent\"\n    v-if=\"resolvedComponent\"\n    :class=\"props.class\"\n    :style=\"iconStyle\"\n  />\n</template>\n",
+      "type": "registry:block"
+    }
+  ]
+}

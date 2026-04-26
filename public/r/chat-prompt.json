@@ -1,0 +1,17 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "chat-prompt",
+  "type": "registry:block",
+  "files": [
+    {
+      "path": "blocks/chat-prompt/index.ts",
+      "content": "export { default as ChatPrompt, type ChatPromptProps } from \"./ChatPrompt.vue\";\n",
+      "type": "registry:block"
+    },
+    {
+      "path": "blocks/chat-prompt/ChatPrompt.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { HTMLAttributes } from \"vue\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface ChatPromptProps {\n  /** Current input value (v-model) */\n  modelValue?: string;\n  /** Textarea placeholder text */\n  placeholder?: string;\n  /** Disable the prompt */\n  disabled?: boolean;\n  /** Auto-focus the textarea on mount */\n  autofocus?: boolean;\n  /** Error state */\n  error?: Error | null;\n  /** Additional CSS classes */\n  class?: HTMLAttributes[\"class\"];\n}\n\nconst props = withDefaults(defineProps<ChatPromptProps>(), {\n  modelValue: \"\",\n  placeholder: \"Type your message here...\",\n});\n\nconst emit = defineEmits<{\n  \"update:modelValue\": [value: string];\n  \"submit\": [event: Event];\n}>();\n\nconst textareaRef = ref<HTMLTextAreaElement>();\n\ndefineExpose({ textareaRef });\n\nonMounted(() => {\n  if (props.autofocus) {\n    nextTick(() => textareaRef.value?.focus());\n  }\n});\n\nfunction resize() {\n  const el = textareaRef.value;\n  if (!el) return;\n  el.style.height = \"auto\";\n  el.style.height = `${el.scrollHeight}px`;\n}\n\nwatch(() => props.modelValue, () => {\n  nextTick(resize);\n});\n\nfunction onInput(e: Event) {\n  emit(\"update:modelValue\", (e.target as HTMLTextAreaElement).value);\n}\n\nfunction onKeydown(e: KeyboardEvent) {\n  if (e.key === \"Enter\" && !e.shiftKey) {\n    e.preventDefault();\n    if (props.modelValue?.trim()) {\n      emit(\"submit\", e);\n    }\n  }\n  if (e.key === \"Escape\") {\n    textareaRef.value?.blur();\n  }\n}\n\nfunction onSubmit(e: Event) {\n  e.preventDefault();\n  if (props.modelValue?.trim()) {\n    emit(\"submit\", e);\n  }\n}\n</script>\n\n<template>\n  <form\n    data-slot=\"chat-prompt\"\n    :class=\"cn('bg-muted rounded-xl border', props.class)\"\n    @submit=\"onSubmit\"\n  >\n    <div\n      v-if=\"$slots.header\"\n      class=\"px-3 pt-3\"\n    >\n      <slot name=\"header\" />\n    </div>\n\n    <textarea\n      ref=\"textareaRef\"\n      :value=\"modelValue\"\n      :placeholder=\"placeholder\"\n      :disabled=\"disabled\"\n      rows=\"1\"\n      class=\"w-full resize-none bg-transparent px-4 pt-4 pb-1.5 text-base leading-5 outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50\"\n      @input=\"onInput\"\n      @keydown=\"onKeydown\"\n    />\n\n    <div\n      v-if=\"$slots.footer\"\n      class=\"flex items-center justify-between gap-2 px-3 pb-3\"\n    >\n      <slot name=\"footer\" />\n    </div>\n  </form>\n</template>\n",
+      "type": "registry:block"
+    }
+  ]
+}
