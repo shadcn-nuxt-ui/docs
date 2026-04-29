@@ -61,6 +61,7 @@
     },
     "pnpm": {
         "overrides": {
+            "defu": "^6.1.7",
             "devalue": "^5.7.1",
             "flatted": "^3.4.0",
             "postcss": "^8.5.12",
