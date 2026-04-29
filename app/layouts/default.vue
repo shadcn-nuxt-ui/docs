@@ -6,7 +6,6 @@ useSeoMeta({
   titleTemplate: `%s - ${siteConfig.name}`,
   description: siteConfig.description,
 });
-
 </script>
 
 <template>
