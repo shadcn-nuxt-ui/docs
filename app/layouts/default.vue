@@ -7,7 +7,6 @@ useSeoMeta({
   description: siteConfig.description,
 });
 
-defineOgImageComponent("Custom");
 </script>
 
 <template>
