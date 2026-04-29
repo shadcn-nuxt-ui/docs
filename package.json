@@ -64,7 +64,9 @@
             "defu": "^6.1.7",
             "devalue": "^5.7.1",
             "flatted": "^3.4.0",
+            "h3": "1.15.11",
             "postcss": "^8.5.12",
+            "@esbuild-kit/core-utils>esbuild": "0.25.12",
             "minimatch@3.1.5>brace-expansion": "1.1.13",
             "micromatch@4.0.8>picomatch": "2.3.2"
         }
