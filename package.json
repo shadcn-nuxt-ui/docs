@@ -31,7 +31,7 @@
         "eslint": "^9.39.4",
         "lucide-vue-next": "^0.554.0",
         "nuxt": "^4.4.2",
-        "nuxt-og-image": "^5.1.13",
+        "nuxt-og-image": "^6.0.0",
         "reka-ui": "^2.9.6",
         "shadcn-nuxt": "2.3.3",
         "tailwind-merge": "^3.5.0",
