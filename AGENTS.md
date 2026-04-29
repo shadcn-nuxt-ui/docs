@@ -27,6 +27,7 @@ CI order: **lint → typecheck** (no tests)
 ## Registry build
 
 `pnpm registry:build` runs `scripts/registry-build.ts`:
+
 1. `shadcn-vue-registry` generates registry.json from `app/registry/`
 2. `shadcn-vue build` outputs per-item JSON to `public/r/*.json`
 3. Intermediate file `app/registry/registry.json` is auto-deleted
