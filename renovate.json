@@ -1,6 +1,75 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "github>nuxt/renovate-config-nuxt"
+  ],
+  "packageRules": [
+    {
+      "description": "Keep pnpm security overrides manually managed",
+      "matchDepTypes": [
+        "overrides"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Major updates require manual approval",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Group Nuxt ecosystem updates",
+      "groupName": "nuxt ecosystem",
+      "matchPackageNames": [
+        "nuxt",
+        "@nuxt/*",
+        "@nuxthub/*",
+        "@vueuse/nuxt",
+        "nuxt-og-image",
+        "nuxt-shiki"
+      ]
+    },
+    {
+      "description": "Group shadcn and UI registry updates",
+      "groupName": "shadcn ecosystem",
+      "matchPackageNames": [
+        "shadcn-nuxt",
+        "shadcn-vue",
+        "shadcn-vue-registry",
+        "reka-ui",
+        "lucide-vue-next"
+      ]
+    },
+    {
+      "description": "Group styling stack updates",
+      "groupName": "styling stack",
+      "matchPackageNames": [
+        "tailwindcss",
+        "@tailwindcss/vite",
+        "tailwind-merge",
+        "class-variance-authority",
+        "clsx",
+        "tw-animate-css"
+      ]
+    },
+    {
+      "description": "Group build and quality tooling updates",
+      "groupName": "tooling",
+      "matchPackageNames": [
+        "eslint",
+        "typescript",
+        "tsx",
+        "@types/node",
+        "lint-staged"
+      ]
+    },
+    {
+      "description": "Keep AI SDK updates isolated",
+      "groupName": "ai sdk",
+      "matchPackageNames": [
+        "ai"
+      ]
+    }
   ]
 }
