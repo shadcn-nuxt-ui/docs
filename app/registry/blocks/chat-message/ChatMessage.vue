@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "vue";
 import type { UIMessage } from "ai";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { LucideIcon } from "@/components/ui/icon";
+import { LucideIcon } from "@/components/ui/lucide-icon";
 import { cn } from "@/lib/utils";
 
 export interface ChatMessageAction {

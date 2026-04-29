@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LucideIcon } from "~/registry/blocks/lucide-icon";
+import { LucideIcon } from "~/registry/ui/lucide-icon";
 </script>
 
 <template>
