@@ -6,8 +6,6 @@ useSeoMeta({
   titleTemplate: `%s - ${siteConfig.name}`,
   description: siteConfig.description,
 });
-
-defineOgImageComponent("Custom");
 </script>
 
 <template>
