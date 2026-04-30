@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Stackhacker UI",
   url: "https://ui.stackhacker.io",
   ogImage: "https://ui.stackhacker.io/og.jpg",
-  description: "Open-source Nuxt templates and components for the shadcn-vue community.",
+  description: "Stackhacker UI is an open-source collection of Nuxt templates and components for the shadcn-vue community.",
   links: {
     github: "https://github.com/stackhacker-ui/docs",
   },
