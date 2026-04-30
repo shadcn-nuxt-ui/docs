@@ -20,15 +20,10 @@ logs
 .DS_Store
 .fleet
 .idea
+.playwright-cli/
+.claude/settings.local.json
 
 # Local env files
 .env
 .env.*
 !.env.example
-
-.dmux/worktrees/task-response/.data
-.dmux/worktrees/task-request/.data
-.dmux/worktrees/task-15-3/.data
-.dmux/worktrees/task-15-5/.data
-.dmux/worktrees/task-17-1/.data
-.dmux/worktrees/task-17-3/.data

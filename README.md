@@ -11,7 +11,7 @@ This project aims to make shadcn-vue easier to use in Nuxt by providing:
 ## What this repository includes
 
 - **Docs site** (Nuxt 4 + Nuxt Content)
-- **shadcn-vue registry output** under `public/r/*.json`
+- **shadcn-vue registry builder** (`pnpm registry:build`)
 - **Template and component documentation** under `content/docs`
 
 ## Use the registry
@@ -50,3 +50,8 @@ pnpm registry:build
 ```
 
 This command generates distributable registry JSON files in `public/r/`.
+`public/r/` is generated at build time and is not committed to git.
+
+## Security
+
+For vulnerability reporting and support policy, see `SECURITY.md`.
