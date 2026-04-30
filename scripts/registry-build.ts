@@ -16,7 +16,7 @@ import { x } from "tinyexec";
   const config = {
     root: cwd,
     name: pkg.name,
-    homepage: "https://shadcn-nuxt-ui.stackhacker.io",
+    homepage: "https://ui.stackhacker.io",
     registries: components.registries,
     cwd: registryPath,
     output: registryPath,
