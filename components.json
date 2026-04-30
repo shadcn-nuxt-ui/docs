@@ -18,6 +18,6 @@
     "composables": "@/composables"
   },
   "registries": {
-    "~/registry/ui": "https://shadcn-nuxt-ui.stackhacker.io/r/{name}.json"
+    "~/registry/ui": "https://ui.stackhacker.io/r/{name}.json"
   }
 }
