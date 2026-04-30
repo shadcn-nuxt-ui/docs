@@ -6,6 +6,9 @@
 .cache
 dist
 
+# Generated shadcn registry output
+public/r/
+
 # Node dependencies
 node_modules
 
