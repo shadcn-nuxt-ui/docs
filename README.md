@@ -1,4 +1,4 @@
-# Shadcn Nuxt UI
+# Stackhacker UI
 
 Open-source templates and reusable components for Nuxt with shadcn-vue.
 
@@ -19,7 +19,7 @@ This project aims to make shadcn-vue easier to use in Nuxt by providing:
 Install an item with the shadcn-vue CLI:
 
 ```bash
-npx shadcn-vue@latest add "https://shadcn-nuxt-ui.stackhacker.io/r/lucide-icon.json"
+npx shadcn-vue@latest add "https://ui.stackhacker.io/r/lucide-icon.json"
 ```
 
 ## Local development

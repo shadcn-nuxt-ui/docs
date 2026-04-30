@@ -13,7 +13,7 @@ Security fixes are applied to the latest version on the `main` branch.
 
 Please use GitHub Private Vulnerability Reporting for this repository:
 
-- https://github.com/shadcn-nuxt-ui/docs/security/advisories/new
+- https://github.com/stackhacker-ui/docs/security/advisories/new
 
 If private reporting is unavailable for your account, contact maintainers privately to request an alternate confidential reporting channel. Do not open a public issue for suspected vulnerabilities.
 

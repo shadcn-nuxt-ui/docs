@@ -29,7 +29,7 @@ interface RepoResponse {
 
 const { data } = await useAsyncData<RepoResponse | null>("github-stars", async () => {
   try {
-    return await $fetch<RepoResponse>("https://ungh.cc/repos/shadcn-nuxt-ui/docs", {
+    return await $fetch<RepoResponse>("https://ungh.cc/repos/stackhacker-ui/docs", {
       timeout: 3000,
     });
   }
