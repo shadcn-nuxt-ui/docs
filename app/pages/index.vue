@@ -24,15 +24,16 @@ const templates = [
     available: true,
   },
   {
+    title: "Starter",
+    description: "A minimal Nuxt starter to begin quickly with shadcn-vue.",
+    icon: Sparkles,
+    href: "/templates",
+    available: true,
+  },
+  {
     title: "Dashboard",
     description: "A flexible dashboard starter for building data-heavy Nuxt interfaces. Coming soon.",
     icon: Blocks,
-    available: false,
-  },
-  {
-    title: "Starter",
-    description: "A minimal Nuxt starter to begin quickly with shadcn-vue. Coming soon.",
-    icon: Sparkles,
     available: false,
   },
 ];
