@@ -36,21 +36,24 @@ const templates: Template[] = [
     image: { light: "/templates/chat-light.png", dark: "/templates/chat-dark.png" },
   },
   {
-    name: "Dashboard",
-    description: "A flexible dashboard starter for building data-heavy Nuxt interfaces.",
-    features: ["Charts and date-picker support", "Multi-column layout", "Light and dark mode"],
-    status: "coming-soon",
-  },
-  {
     name: "Starter",
     description: "A minimal Nuxt starter to begin quickly with shadcn-vue.",
     features: ["Nuxt setup included", "ESLint setup included", "shadcn-vue setup included"],
-    status: "coming-soon",
+    preview: "https://starter-template.stackhacker.io",
+    github: "https://github.com/stackhacker-ui/starter",
+    status: "available",
+    image: { light: "/templates/starter-light.png", dark: "/templates/starter-dark.png" },
   },
   {
     name: "Landing",
     description: "A lightweight landing page starter powered by Nuxt Content.",
     features: ["Features, pricing, and FAQ sections", "Nuxt Content support", "Responsive layout"],
+    status: "coming-soon",
+  },
+  {
+    name: "Dashboard",
+    description: "A flexible dashboard starter for building data-heavy Nuxt interfaces.",
+    features: ["Charts and date-picker support", "Multi-column layout", "Light and dark mode"],
     status: "coming-soon",
   },
 ];
@@ -75,11 +78,11 @@ const templates: Template[] = [
             <div
               v-for="template in templates"
               :key="template.name"
-              class="border-border bg-card text-card-foreground group overflow-hidden rounded-lg border transition-colors"
+              class="border-border bg-card text-card-foreground group flex h-full flex-col overflow-hidden rounded-lg border transition-colors"
               :class="template.status === 'available' ? 'hover:border-foreground/20' : 'opacity-60'"
             >
               <!-- Image -->
-              <div class="border-border bg-muted relative aspect-[3/2] overflow-hidden border-b">
+              <div class="border-border bg-muted relative aspect-3/2 overflow-hidden border-b">
                 <template v-if="template.image">
                   <img
                     :src="template.image.light"
@@ -106,7 +109,7 @@ const templates: Template[] = [
               </div>
 
               <!-- Content -->
-              <div class="p-6">
+              <div class="flex flex-1 flex-col p-6">
                 <div class="mb-2 flex items-center gap-2">
                   <h3 class="text-foreground text-lg font-semibold">
                     {{ template.name }}
@@ -133,9 +136,10 @@ const templates: Template[] = [
                 </ul>
                 <div
                   v-if="template.status === 'available'"
-                  class="flex items-center gap-3"
+                  class="mt-auto flex items-center gap-3"
                 >
                   <Button
+                    v-if="template.preview"
                     as-child
                     size="sm"
                   >
@@ -149,6 +153,7 @@ const templates: Template[] = [
                     </a>
                   </Button>
                   <Button
+                    v-if="template.github"
                     as-child
                     variant="outline"
                     size="sm"
