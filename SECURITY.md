@@ -15,7 +15,7 @@ Please use GitHub Private Vulnerability Reporting for this repository:
 
 - https://github.com/shadcn-nuxt-ui/docs/security/advisories/new
 
-If private reporting is unavailable for your account, open a security issue without exploit details and ask maintainers to continue in a private channel.
+If private reporting is unavailable for your account, contact maintainers privately to request an alternate confidential reporting channel. Do not open a public issue for suspected vulnerabilities.
 
 We aim to:
 
