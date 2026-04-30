@@ -1,5 +1,7 @@
 name: ci
 on: push
+permissions:
+  contents: read
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
@@ -21,6 +23,8 @@ jobs:
         run: pnpm install
       - name: Build registry artifacts
         run: pnpm run registry:build
+      - name: Generate static output
+        run: pnpm run generate
       - name: Lint
         run: pnpm run lint
       - name: Typecheck

@@ -2,20 +2,23 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Security fixes are applied to the latest version on the `main` branch.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| main    | :white_check_mark: |
+| others  | :x:                |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Please use GitHub Private Vulnerability Reporting for this repository:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- https://github.com/shadcn-nuxt-ui/docs/security/advisories/new
+
+If private reporting is unavailable for your account, open a security issue without exploit details and ask maintainers to continue in a private channel.
+
+We aim to:
+
+- acknowledge reports within 72 hours,
+- provide an initial assessment within 7 days,
+- coordinate disclosure after a fix is available.
